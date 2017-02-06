@@ -17,7 +17,7 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ClarityModule.forChild(),
+    ClarityModule.forRoot(),
     UiModule,
     PagesModule,
     AppRoutingModule,
