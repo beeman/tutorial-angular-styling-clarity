@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -6,17 +6,10 @@ import { Component, OnInit } from '@angular/core';
     <div class="content-container">
       <app-sidebar></app-sidebar>
       <div class="content-area">
-        <ng-content></ng-content>
+        <router-outlet></router-outlet>
       </div>
     </div>
   `,
   styles: []
 })
-export class MainComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class MainComponent { }

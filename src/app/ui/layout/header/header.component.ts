@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   template: `
     <header class="header-1">
       <div class="branding">
-        <a class="nav-link">
+        <a [routerLink]="['/']" class="nav-link">
           <clr-icon shape="shield"></clr-icon>
           <span class="title">Angular CLI</span>
         </a>
       </div>
       <div class="header-nav">
-        <a class="active nav-link nav-icon">
+        <a [routerLink]="['/', 'dashboard']" routerLinkActive="active" class="nav-link nav-icon">
           <clr-icon shape="home"></clr-icon>
         </a>
-        <a class=" nav-link nav-icon">
+        <a [routerLink]="['/', 'settings']" routerLinkActive="active" class="nav-link nav-icon">
           <clr-icon shape="cog"></clr-icon>
         </a>
       </div>
@@ -40,27 +40,20 @@ import { Component, OnInit } from '@angular/core';
     <nav class="subnav">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Dashboard</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'dashboard']">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'posts']">Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Reports</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'todos']">Todos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Users</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'users']">Users</a>
         </li>
       </ul>
     </nav>
   `,
   styles: []
 })
-export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class HeaderComponent { }
