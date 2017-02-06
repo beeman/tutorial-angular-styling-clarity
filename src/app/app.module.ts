@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
 
 import { AppComponent } from './app.component';
+import { UiModule } from "./ui/ui.module";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     ClarityModule.forChild(),
+    UiModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
