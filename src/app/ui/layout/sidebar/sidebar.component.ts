@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-sidebar',
   template: `
-    <nav class="sidenav">
+    <nav>
       <section class="sidenav-content">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'dashboard']">Overview</a>
         <section class="nav-group collapsible">
