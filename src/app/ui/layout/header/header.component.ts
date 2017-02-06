@@ -11,11 +11,8 @@ import { Component } from '@angular/core';
         </a>
       </div>
       <div class="header-nav">
-        <a [routerLink]="['/', 'dashboard']" routerLinkActive="active" class="nav-link nav-icon">
-          <clr-icon shape="home"></clr-icon>
-        </a>
-        <a [routerLink]="['/', 'settings']" routerLinkActive="active" class="nav-link nav-icon">
-          <clr-icon shape="cog"></clr-icon>
+        <a *ngFor="let headerLink of headerLinks" [routerLink]="headerLink.link" routerLinkActive="active" class="nav-link nav-icon">
+          <clr-icon [attr.shape]="headerLink.icon"></clr-icon>
         </a>
       </div>
       <form class="search">
@@ -39,21 +36,26 @@ import { Component } from '@angular/core';
     </header>
     <nav class="subnav">
       <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'dashboard']">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'posts']">Posts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'todos']">Todos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/', 'users']">Users</a>
+        <li *ngFor="let subLink of subLinks" class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="subLink.link">{{subLink.label}}</a>
         </li>
       </ul>
     </nav>
   `,
   styles: []
 })
-export class HeaderComponent { }
+export class HeaderComponent {
+
+  headerLinks = [
+    { link: ['/', 'dashboard'], icon: 'home'},
+    { link: ['/', 'settings'], icon: 'cog'},
+  ];
+
+  subLinks = [
+    { link : ['/', 'dashboard'], label: 'Dashboard' },
+    { link : ['/', 'posts'], label: 'Posts' },
+    { link : ['/', 'todos'], label: 'Todos' },
+    { link : ['/', 'users'], label: 'Users' },
+  ];
+
+}
